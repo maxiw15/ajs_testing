@@ -1,4 +1,4 @@
-import CardWidget from "./widget";
+import CardWidget from "./CardWidget";
 
 const container = document.querySelector(".container");
 const form = new CardWidget(container);

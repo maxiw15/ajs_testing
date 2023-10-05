@@ -38,6 +38,8 @@ export default class CardWidget {
     this.element = this.parentEl.querySelector(CardWidget.selector);
     this.input = this.element.querySelector(CardWidget.inputSelector);
     this.element.addEventListener("submit", this.onSubmit);
+    this.images = this.parentEl.querySelectorAll(".card");
+    this.status = document.querySelectorAll(".status");
   }
   checkCardNumber(value) {
     if (value.length < 13) return false;
@@ -80,15 +82,24 @@ export default class CardWidget {
     return null;
   }
 
-  changeCardImage() {
-    return "";
+  changeCardImage(cardSystem) {
+    for (const cardsListItem of this.images) {
+      cardsListItem.classList.add("cdisabled");
+    }
+    document.querySelector(cardSystem).classList.remove("cdisabled");
   }
 
   onSubmit(e) {
     e.preventDefault();
     const value = this.input.value;
     if (this.checkCardNumber(value)) {
-      alert(this.checkCardSystem(value));
+      this.status[0].textContent = "";
+      this.changeCardImage(this.checkCardSystem(value));
+    } else {
+      this.status[0].textContent = "Вы ввели неверный номер карты";
+      for (const cardsListItem of this.images) {
+        cardsListItem.classList.add("cdisabled");
+      }
     }
   }
 }

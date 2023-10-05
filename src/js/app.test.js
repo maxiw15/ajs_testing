@@ -1,3 +1,5 @@
+import CardWidget from "./CardWidget";
+
 describe("test", () => {
   test("test", () => {
   expect(1).toBe(1)
