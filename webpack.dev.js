@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const { merge } = require('webpack-merge');
 const common = require('./webpack.common');
+const LicensePlugin = require('webpack-license-plugin')
 
 module.exports = merge(common, {
   // Set the mode to development or production
@@ -18,5 +19,6 @@ module.exports = merge(common, {
   plugins: [
     // Only update what has changed on hot reload
     new webpack.HotModuleReplacementPlugin(),
+    new LicensePlugin()
   ],
 });

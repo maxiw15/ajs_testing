@@ -11,7 +11,6 @@ export default class CardWidget {
             <li><span class="card visa cdisabled" title="Visa">Visa</span></li>
             <li><span class="card master cdisabled" title="Mastercard">Mastercard</span></li>
             <li><span class="card amex cdisabled" title="American Express">American Express</span></li>
-            <li><span class="card discover cdisabled" title="Discover">Discover</span></li>
             <li><span class="card jcb cdisabled" title="JCB">JCB</span></li>
             <li><span class="card mir cdisabled" title="Мир">Мир</span></li>
         </ul>
@@ -75,11 +74,8 @@ export default class CardWidget {
       /^65[4-9][0-9]{13}|64[4-9][0-9]{13}|6011[0-9]{12}|(622(?:12[6-9]|1[3-9][0-9]|[2-8][0-9][0-9]|9[01][0-9]|92[0-5])[0-9]{10})/.test(
         value
       )
-    ) {
-      return ".discover";
-    }
-
-    return null;
+    )
+      return null;
   }
 
   changeCardImage(cardSystem) {

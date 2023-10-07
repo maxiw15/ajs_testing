@@ -3,3 +3,4 @@ coverage
 doc
 webpack.*.js
 /src/js/app.test.js
+/e2e/*
